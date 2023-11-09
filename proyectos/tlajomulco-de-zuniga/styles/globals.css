@@ -1,0 +1,33 @@
+*,h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+  padding: 0;
+  
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  font-family: 'Space Mono', monospace;
+  color: #fff;
+}
+
+html {
+  font-size: .625rem;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 200vh;
+  padding-bottom: 10rem;
+}
+
+section {
+  position: relative;
+  max-width: 100rem;
+  margin-inline: auto;
+  min-height: 100vh;
+  padding: 4.8rem 2rem 0;
+
+  >h2 {
+    font-size: 3.2rem;
+    opacity: .6;
+    margin-bottom: 2rem;
+  }
+}

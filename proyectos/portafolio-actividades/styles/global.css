@@ -1,0 +1,319 @@
+html {
+  font-size: 10px;
+}
+
+*, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+  font-family: 'Space Mono', monospace;
+  color: #f4f4f4;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #05161f;
+  /* background-image: radial-gradient(circle at top right, rgba(121, 68, 154, 0.13),       transparent),
+    radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent) */
+}
+
+/* background */
+canvas#background {
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* header */
+#app-header {
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  min-height: 4.8rem;
+  padding: 1rem 1.8rem;
+  pointer-events: none;
+
+}
+#app-header > .container {
+  width: 100%;
+  max-width: 100rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-inline: auto;
+}
+#app-header > .container > nav > ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+#app-header > .container > nav > ul > li > a {
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  pointer-events: all;
+}
+#app-header > .container > nav > ul > li > a > img {
+  display: block;  
+  margin: 0;
+  object-fit: cover;
+  height: 2.4rem;
+}
+#app-header > .container > nav > ul > li > a > .label {
+  display: none;
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition: .15s linear;
+}
+@media screen and (min-width: 768px) {
+  #app-header > .container > nav > ul > li > a > .label {
+    display: inline-block;
+  }
+  #app-header > .container > nav > ul > li > a:hover > .label {
+    text-shadow: 0 0 1rem #ffffff;
+  }
+}
+
+/* banner */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
+
+:root {
+	--angle: 4deg;
+}
+#banner {
+  z-index: 1;
+  position: relative;
+  pointer-events: none;
+  padding-top: 4rem;
+  display: grid;
+  place-items: center;
+  gap: 8rem;
+  margin-bottom: 10rem;
+}
+#banner > section {
+  display: grid;
+  place-items: center;
+
+}
+#banner > section > img {
+  animation: up-and-down-img 1.9s ease infinite;
+}
+#banner > section > img#img-profile-desktop {
+  display: none;
+}
+#banner > section > .word-container {
+	position: relative;
+	width: 100%;
+	min-height: 100%;
+}
+#banner > section > .word-container > .word {
+	position: absolute;
+	left: 52%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	font-family: "Space Mono";
+	font-size: 8rem;
+	font-weight: 900;
+	color: var(--color, #fff);
+	display: flex;
+	pointer-events: none;
+	user-select: none;
+	line-height: 5.8rem;
+
+	.char {
+    color: inherit;
+		position: relative;
+		-webkit-text-stroke: 2px #000;
+		transform: translateY(-35%) rotate(var(--angle));
+		animation: up-and-down 1.8s ease infinite;
+		animation-delay: calc((var(--word-index) * -0.15s) + (var(--char-index) * 0.1s));
+		z-index: calc(-1 * var(--char-index));
+		margin-left: -1.6rem;
+	}
+}
+@keyframes up-and-down-img {
+	0%,
+	100% {
+		transform: translateY(-5%);
+	}
+	50% {
+		transform: translateY(5%);
+	}
+}
+@keyframes up-and-down {
+	0%,
+	100% {
+		transform: translateY(-35%) rotate(var(--angle));
+	}
+	50% {
+		transform: translateY(35%) rotate(var(--angle));
+	}
+}
+#banner > section:nth-child(2) {
+  display: grid;
+  gap: .6rem;
+  max-width: 32rem;
+  padding: 1rem 2rem;
+  background: #282C3480;
+  border-radius: 1rem;
+  pointer-events: all;
+  transition: .15s linear;
+}
+#banner > section:nth-child(2):hover {
+  box-shadow: 0 0 1rem #ffffff40;
+}
+#banner > section:nth-child(2) > h2 {
+  font-size: 2rem;
+}
+#banner > section:nth-child(2) > p {
+  font-size: 1.4rem;
+  text-align: justify;
+}
+
+/* projects */
+#projects {
+  z-index: 1;
+  position: relative;
+  pointer-events: none;
+  padding: 0 2rem 4rem;
+}
+#projects > article {
+  position: relative;
+  width: 100%;
+  max-width: 100rem;
+  max-height: 96rem;
+  overflow: hidden;
+  margin-inline: auto;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+
+  &::before {
+    z-index: 1;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, transparent 0%, #05161f 100%);
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  &.all {
+    max-height: inherit;
+    padding-bottom: 8rem;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  > h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 2.8rem;
+    opacity: .4;
+  }
+
+  > .container {
+    flex: 1;
+    min-width: 28rem;
+
+
+    >h3 {
+      margin-bottom: 2rem;
+      font-size: 1.7rem;
+      text-align: center;
+      opacity: .4;
+    }
+  }
+}
+#module-1,
+#module-2,
+#module-3 {
+  display: grid;
+  gap: 4rem;
+  list-style: none;
+}
+#module-1 > .activity-card,
+#module-2 > .activity-card,
+#module-3 > .activity-card {
+  max-width: 38rem;
+  margin: auto;
+  position: relative;
+  pointer-events: all;
+}
+#module-1 > .activity-card > .image-container,
+#module-2 > .activity-card > .image-container,
+#module-3 > .activity-card > .image-container {
+  width: 100%;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  border-radius: .6rem;
+}
+#module-1 > .activity-card > .image-container > img,
+#module-2 > .activity-card > .image-container > img,
+#module-3 > .activity-card > .image-container > img {
+  width: 100%;
+  display: block;
+  position: relative;
+  object-fit: cover;
+  transition: transform .15s ease-in, left .15s linear;
+}
+#module-1 > .activity-card:hover > .image-container > img,
+#module-2 > .activity-card:hover > .image-container > img,
+#module-3 > .activity-card:hover > .image-container > img {
+  transform: scale(1.05);
+}
+#module-1 > .activity-card > h4,
+#module-2 > .activity-card > h4,
+#module-3 > .activity-card > h4 {
+  font-size: 1.8rem;
+  margin-bottom: .6rem;
+  transition: text-shadow .15s linear;
+}
+
+#module-1 > .activity-card > p,
+#module-2 > .activity-card > p,
+#module-3 > .activity-card > p {
+  font-size: 1.4rem;
+  transition: text-shadow .15s linear;
+}
+
+#module-1 > .activity-card:hover > h4,
+#module-2 > .activity-card:hover > h4,
+#module-3 > .activity-card:hover > h4,
+#module-1 > .activity-card:hover > p,
+#module-2 > .activity-card:hover > p,
+#module-3 > .activity-card:hover > p {
+  text-shadow: 0 0 1rem white;
+}
+
+#uai1-button-more {
+  z-index: 1;
+  pointer-events: all;
+  position: absolute;
+  bottom: 2rem;
+  border: none;
+  background: #282c34;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  border-radius: .4rem;
+  transition: .15s linear;
+
+  &:hover {
+    background: #282c3460;
+  }
+}

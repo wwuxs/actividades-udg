@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  font-family: Arial, Helvetica, sans-serif;
+}
+html {
+  font-size: .625rem;
+  --c-dark: #213555;
+  --c-light: #F0F0F0;
+  --c-blue-0: #213555;
+  --c-blue-1: #4F709C;
+}
+
+body {
+  background: var(--c-light);
+}
+
+body > main {
+  display: grid;
+  gap: 4rem;
+  padding: 2rem;
+}
+
+/* home-section */
+#home-section {
+}
+#home-section > h1 {
+  font-size: 2.4rem;
+  color: var(--c-blue-0);
+  margin: 0;
+}
+#home-section > h2 {
+  font-size: 2rem;
+  color: var(--c-blue-1);
+}
+
+/* definitions ( left | right - sections) */
+#definitions {
+  display: grid;
+  gap: 2rem;
+}
+@media screen and (min-width: 992px) {
+  #definitions {
+    display: flex;
+    gap: 4rem;
+  }
+}
+
+/* left-section */
+#left-section {
+  flex: 1;
+  min-width: 32rem;
+  display: grid;
+  margin: 0 auto;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+#left-section > .card-container {
+  width: 100%;
+  max-width: 48rem;
+
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+  border-radius: .6rem;
+}
+#left-section > .card-container > img {
+  width: 28rem;
+  display: block;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+#left-section > .card-container > h2 {
+  font-size: 2rem;
+  color: var(--c-blue-0);
+}
+#left-section > .card-container > p {
+  font-size: 1.8rem;
+  color: var(--c-blue-1);
+  text-align: justify;
+}
+
+/* right-section */
+#right-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+#right-section > .card-container {
+  max-width: 48rem;
+  padding: 1rem;
+  margin-inline: auto;
+  background: var(--c-blue-1);
+  border-radius: .5rem;
+  display: grid;
+  gap: 1rem;
+}
+@media screen and (min-width: 992px) {
+  #right-section > .card-container {
+    margin-inline: inherit;
+  }
+}
+#right-section > .card-container > h3 {
+  font-size: 2rem;
+  color: var(--c-light);
+}
+#right-section > .card-container > p {
+  font-size: 1.6rem;
+  color: var(--c-light);
+  opacity: .8;
+  text-align: justify;
+}
+#right-section > .image {
+  background: none;
+}
+#right-section > .image > img {
+  display: block;
+  margin-bottom: -1rem;
+  max-width: 16rem;
+  margin-inline: auto;
+  object-fit: cover;
+}
+#right-section > .response {
+  flex: 1;
+  padding: 0;
+  background: none;
+  display: grid;
+  align-items: flex-end;
+}
+#right-section > .response > p {
+  color: var(--c-blue-0);
+  font-weight: bold;
+  opacity: .6;
+}
+
+/* apps */
+#applications-section {
+  display: grid;
+}
+#applications-section > h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--c-blue-0);
+}
+
+#apps {
+  width: 100%;
+  margin-inline: auto;
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+  grid-auto-rows: 16rem;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+}
+#apps > .app {
+  display: grid;
+  place-items: center;
+  place-content: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+#apps > .app > h4 {
+  text-align: center;
+  font-size: 1.6rem;
+  color: var(--c-blue-1);
+}
+#apps > .app > img {
+  width: 5rem;
+  display: block;
+  object-fit: cover;
+  transition: transform .15s linear;
+}
+@media screen and (min-width: 992px) {
+  #apps {
+    max-width: 84rem;
+  }
+}
+#apps > .app:hover > h4 {
+  text-shadow: 0 0 .4rem var(--c-blue-1);
+}
+#apps > .app:hover > img {
+  transform: scale(1.1);
+}

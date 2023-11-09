@@ -1,0 +1,45 @@
+#tourism {
+  margin-top: 10rem;
+
+  >.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+
+
+    >.card {
+      width: 100%;
+      background: #00000040;
+      backdrop-filter: blur(5px);
+      box-shadow: .4rem .4rem 1rem #00000020;
+      display: grid;
+      border-radius: .6rem;
+      overflow: hidden;
+
+      @media screen and (min-width: 768px) {
+        width: calc( 50% - 1rem );
+      }
+
+      >img {
+        width: 100%;
+        display: block;
+        margin: 0;
+        object-fit: cover;
+      }
+      >h4 {
+        padding: 1rem 2rem;
+        font-size: 1.8rem;
+      }
+      >button {
+        width: auto;
+        background: #66d055;
+        border: none;
+        font-size: 1.6rem;
+        border-radius: .6rem;
+        font-weight: bold;
+        padding: 1rem 0;
+      }
+    }
+  }
+}
