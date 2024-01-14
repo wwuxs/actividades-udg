@@ -1,0 +1,97 @@
+#screens {
+  width: 100%;
+  flex: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  scroll-snap-type: x mandatory;
+  
+  background: linear-gradient(90deg, rgba(248,244,236,1) 0%, rgba(191,188,182,1) 100%);
+	color: #232D3F;
+  scroll-behavior: smooth;
+}
+#screens::-webkit-scrollbar {
+  display: none;
+}
+#screens > section[data-screen] {
+	position: relative;
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+  scroll-snap-align: start;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 20px;
+
+	display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  align-content: flex-start;
+}
+#screens > section[data-screen] > * {
+  max-width: 400px;
+}
+#screens > section[data-screen] > img {
+	width: 100%;
+  max-height: 480px;
+	margin: 0;
+	object-fit: cover;
+  object-position: top;
+	position: relative;
+	border-radius: 10px;
+  box-shadow: .5px .5px 10px #00000020;
+}
+
+#screens > section[data-screen] > p {
+	font-size: 24pt;
+	font-weight: lighter;
+  text-align: right;
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+
+#screens > section[data-screen] > h2 {
+	width: 100%;
+	position: relative;
+	font-size: 12pt;
+	text-align: center;
+	font-weight: normal;
+  margin: 0;
+  flex: 1;
+}
+
+footer > .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+footer > .container > button {
+  flex: 1;
+  border: none;
+  margin: 0;
+  color: rgba(248,244,236,1);
+  padding: 2rem;
+  background: #232D3Fe0;
+  text-decoration: none;
+  cursor: pointer;
+}
+footer > .container > button:hover {
+  flex: 1;
+  border: none;
+  margin: 0;
+  color: rgba(248,244,236,1);
+  padding: 2rem;
+  background: #2c384fe0;
+  text-decoration: none;
+  cursor: pointer;
+}
+#screens > section[data-screen] > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
